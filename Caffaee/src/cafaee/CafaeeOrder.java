@@ -10,25 +10,20 @@ public static void main(String[] args) {
 	  List list = new List();
 	 list.printGroceryList();
      
-     
+	@SuppressWarnings("resource")
 	
-   
 	Scanner scanner = new Scanner(System.in);
 	int choice2 = scanner.nextInt();
-	Food hamburger2 = new Food(null, null, 0, null);
- 
-	double price = hamburger2.itemizeHamburger();
-  
-    
-    boolean quit = false;
-    int choice = 0;
+	
+	boolean quit = false;
+    int choice = 0; 
 
     
-    printInstructions();
+   
     while (!quit) {
-        System.out.println("Enter your choice: ");
+        System.out.println("Enter your choice: , Press 1 to see the list  or Print 0 to see Your order  ");
         choice = scanner.nextInt();
-        scanner.nextLine();
+       // scanner.nextLine();
 
         switch (choice) {
             case 0:
@@ -73,40 +68,45 @@ public static void printInstructions() {
      System.out.println("TotalPrice is : " + Total);
 }
 public static void Burger() {
-	Food hamburger = new Food( "Burger", "", 4.0, "");
-	
-	order.add( 4.0);
-	orderNameList.add("Burger"); 
-    double price = hamburger.itemizeHamburger();
+	Food hamburger = new Food( "Burger", 4.0);
+	System.out.println("You order Burger  4.0");
+	order.add( hamburger.getPrice());
+	orderNameList.add(hamburger.getName());
+	printInstructions();
 }
 
 public static void subWayWithITaliBread() {
-	Food hamburger = new Food("Subway", " ", 4.5, "Itali");
-	order.add(  4.5);
-	orderNameList.add("Subway");
-	double price = hamburger.itemizeHamburger();
+	Food Subway = new Food("Subway", 4.5);
+	System.out.println("You order " + Subway.getName() + " " + Subway.getPrice());
+	order.add( Subway.getPrice());
+	orderNameList.add(Subway.getName());
+	printInstructions();
+	
 }
 
 public static void pittzza_food() {
-	Food hamburger = new Food("Pittzza", "", 3.56, "");
-	order.add( 3.56);
-	orderNameList.add("Pittzza");
-	
-    double price = hamburger.itemizeHamburger();
+	Food Pittzza = new Food("Pittzza", 3.5);
+	  System.out.println("You order " + Pittzza.getName() + " " + Pittzza.getPrice() );
+	order.add( Pittzza.getPrice());
+	orderNameList.add(Pittzza.getName());
+	printInstructions();
+    
 }
 
 public static void teaDring() {
-	Food hamburger = new Food("Tea", "", 0.99, "black");
-    double price = hamburger.itemizeHamburger();
-    order.add(  0.99);
-    orderNameList.add("Tea");
+	Food Tea = new Food("Tea",  0.99);
+     System.out.println("You order " + Tea.getName() + " " + Tea.getPrice());
+    order.add( Tea.getPrice());
+	orderNameList.add(Tea.getName());
+	printInstructions();
 }
 
 public static void coffeeSmallSize() {
-	Food hamburger = new Food("Coffee", "", 0.99, "black");
-    double price = hamburger.itemizeHamburger();
-    order.add(  0.99);
-    orderNameList.add("Tea");
+	Food Coffee = new Food("Coffee",  0.99);
+    System.out.println("You order " + Coffee.getName() + " " + Coffee.getPrice());
+    order.add( Coffee.getPrice());
+	orderNameList.add(Coffee.getName());
+	printInstructions();
 }
 
 
