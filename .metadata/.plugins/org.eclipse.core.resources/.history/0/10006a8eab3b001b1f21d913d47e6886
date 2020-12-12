@@ -1,0 +1,13 @@
+package cafaee;
+
+public class CafaeeOrder {
+public static void main(String[] args) {
+	private static Scanner scanner = new Scanner(System.in);
+    private static GroceryList groceryList = new GroceryList();
+	
+	
+
+	Hamburger hamburger = new Hamburger("Basic", "Sausage", 3.56, "White");
+    double price = hamburger.itemizeHamburger();
+}
+}

@@ -1,0 +1,31 @@
+package cafaee;
+
+public class Foood {
+private String item1name ;
+private double price1 ;
+
+
+
+public Foood(String item1name, double price1) {
+	super();
+	this.item1name = item1name;
+	this.price1 = price1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

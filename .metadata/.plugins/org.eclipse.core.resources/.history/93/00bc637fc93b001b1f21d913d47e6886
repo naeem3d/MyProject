@@ -1,0 +1,16 @@
+package cafaee;
+
+import java.util.ArrayList;
+
+public class List {
+	private ArrayList<String> CaffeList = new ArrayList<String>();
+
+	public void printGroceryList() {
+     
+        for(int i=0; i<CaffeList.size(); i++) {
+            CaffeList.add("Burger"+ i) ;
+            System.out.println((i+1) + ". " + CaffeList.get(i));
+        }
+    }
+    
+}

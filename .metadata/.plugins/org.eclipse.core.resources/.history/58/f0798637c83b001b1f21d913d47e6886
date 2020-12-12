@@ -1,0 +1,107 @@
+package cafaee;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CafaeeOrder {
+	private static ArrayList<Hamburger> order = new ArrayList<Hamburger>();
+public static void main(String[] args) {
+	
+    System.out.println("\nPress ");
+    System.out.println("\t 0 - See Your Order .");
+    System.out.println("\t 1 - To print the list of grocery items.");
+    System.out.println("\t 2 - Hamburger");
+    System.out.println("\t 3 - Subway.");
+    System.out.println("\t 4 - Pittza.");
+    System.out.println("\t 5 - Tea dring.");
+    System.out.println("\t 6 - Cofaee Dring.");
+    
+	Scanner scanner = new Scanner(System.in);
+	
+	Hamburger hamburger2 = new Hamburger(null, null, 0, null);
+ 
+	double price = hamburger2.itemizeHamburger();
+    List list = new List();
+    
+    boolean quit = false;
+    int choice = 0;
+
+    
+    printInstructions();
+    while (!quit) {
+        System.out.println("Enter your choice: ");
+        choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+            case 0:
+                printInstructions();
+                break;
+            case 1:
+               list.printGroceryList();
+                break;
+            case 2:
+                Burger();
+                break;
+            case 3:
+                subWayWithITaliBread();
+                break;
+            case 4:
+                pittzza_food();
+                break;
+            case 5:
+                teaDring();
+                break;
+            case 6:
+                coffeeSmallSize();
+            case 7:
+                quit = true;
+                break;
+        }
+    }
+}
+
+public static void printInstructions() {
+	 System.out.println("You have " + order.size() + " items in your order list");
+     for(int i=0; i< order.size(); i++) {
+         System.out.println((i+1) + ". " + order.get(i));
+     }
+}
+public static void Burger() {
+	Hamburger hamburger = new Hamburger( "Burger", "", 4.0, "");
+	order.add( hamburger);
+    double price = hamburger.itemizeHamburger();
+}
+
+public static void subWayWithITaliBread() {
+	Hamburger hamburger = new Hamburger("Subway", " ", 4.5, "Itali");
+	order.add(  hamburger);
+	double price = hamburger.itemizeHamburger();
+}
+
+public static void pittzza_food() {
+	Hamburger hamburger = new Hamburger("Pittzza", "", 3.56, "");
+	order.add( hamburger);
+	
+    double price = hamburger.itemizeHamburger();
+}
+
+public static void teaDring() {
+	Hamburger hamburger = new Hamburger("Tea", "", 0.99, "black");
+    double price = hamburger.itemizeHamburger();
+}
+
+public static void coffeeSmallSize() {
+	Hamburger hamburger = new Hamburger("Coffee", "", 0.99, "black");
+    double price = hamburger.itemizeHamburger();
+}
+
+
+
+public void addGroceryItem(String item) {
+
+    
+}
+
+
+}

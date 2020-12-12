@@ -1,0 +1,92 @@
+package cafaee;
+
+import java.util.Scanner;
+
+public class CafaeeOrder {
+public static void main(String[] args) {
+	Hamburger hamburger ;
+	 Scanner scanner = new Scanner(System.in);
+	
+	Hamburger hamburger2 = new Hamburger("", "", 0.0, "");
+ 
+	double price = hamburger2.itemizeHamburger();
+    List list = new List();
+    
+    boolean quit = false;
+    int choice = 0;
+
+    
+    printInstructions();
+    while (!quit) {
+        System.out.println("Enter your choice: ");
+        choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+            case 0:
+                printInstructions();
+                break;
+            case 1:
+               list.printGroceryList();
+                break;
+            case 2:
+                Burger();
+                break;
+            case 3:
+                modifyItem();
+                break;
+            case 4:
+                removeItem();
+                break;
+            case 5:
+                searchForItem();
+                break;
+            case 6:
+                processArrayList();
+            case 7:
+                quit = true;
+                break;
+        }
+    }
+}
+
+public static void printInstructions() {
+    System.out.println("\nPress ");
+    System.out.println("\t 0 - To print choice options.");
+    System.out.println("\t 1 - To print the list of grocery items.");
+    System.out.println("\t 2 - Hamburger");
+    System.out.println("\t 3 - Subway.");
+    System.out.println("\t 4 - Pittza.");
+    System.out.println("\t 5 - To search for an item in the list.");
+    System.out.println("\t 6 - To quit the application.");
+}
+public static void Burger() {
+	Hamburger hamburger = new Hamburger("", "Gurger", 4.0, "");
+    double price = hamburger.itemizeHamburger();
+}
+
+public static void modifyItem() {
+	Hamburger hamburger = new Hamburger("", "Subway ", 4.5, "Itali");
+	double price = hamburger.itemizeHamburger();
+}
+
+public static void removeItem() {
+	Hamburger hamburger = new Hamburger("", "Pittzza", 3.56, "");
+	
+    double price = hamburger.itemizeHamburger();
+}
+
+public static void searchForItem() {
+	Hamburger hamburger = new Hamburger("Basic", "Sausage", 3.56, "White");
+    double price = hamburger.itemizeHamburger();
+}
+
+public static void processArrayList() {
+	Hamburger hamburger = new Hamburger("Basic", "Sausage", 3.56, "White");
+    double price = hamburger.itemizeHamburger();
+}
+
+
+
+
+}
